@@ -23,6 +23,8 @@ const palette = {
   secondaryGreen900: "#092D27",
   secondaryGreen1000: "#07231E",
 
+  green2: "#316F64",
+
   dark100: "#E8E8E8",
   dark200: "#DDDDDD",
   dark300: "#B9B9B8",
@@ -36,15 +38,21 @@ const palette = {
 
   overlay20: "rgba(25, 16, 21, 0.2)",
   overlay50: "rgba(25, 16, 21, 0.5)",
+  text1: "#152E35",
+  text2: "#788D92",
+  text3: '#0E343D',
 
   white: "#FFFFFF",
   black: "#000000",
-  gray: "#F5F5F5"
+  gray: "#F5F5F5",
+  gray67: "#676767",
+  grayEBEDEF: "#EBEDEF",
 } as const
 
 export const colors = {
   text: palette.dark500,
   background: palette.white,
   button: palette.secondaryGreen500,
+  border: palette.grayEBEDEF,
   palette
 }

@@ -1,4 +1,5 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import auth from '@react-native-firebase/auth'
 
 export const AuthenticationStoreModel = types
   .model("AuthenticationStore")
@@ -30,8 +31,34 @@ export const AuthenticationStoreModel = types
       store.authEmail = ""
     },
   }))
+  .actions((store) => ({
+    async signUp(email?: string, password?: string) {
+      return auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(async () => {
+          const accessToken = await auth().currentUser.getIdToken()
+          store.setAuthToken(accessToken)
+          return "success"
+        })
+        .catch(error => {
+          return error.code
+        })
+    },
+    async login(email?: string, password?: string) {
+      return auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(async () => {
+          const accessToken = await auth().currentUser.getIdToken()
+          store.setAuthToken(accessToken)
+          return "success"
+        })
+        .catch(error => {
+          return error.code
+        })
+    }
+  }))
 
-export interface AuthenticationStore extends Instance<typeof AuthenticationStoreModel> {}
-export interface AuthenticationStoreSnapshot extends SnapshotOut<typeof AuthenticationStoreModel> {}
+export interface AuthenticationStore extends Instance<typeof AuthenticationStoreModel> { }
+export interface AuthenticationStoreSnapshot extends SnapshotOut<typeof AuthenticationStoreModel> { }
 
 // @demo remove-file

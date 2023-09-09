@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893083790713",
+    "project_id": "korean-b640f",
+    "storage_bucket": "korean-b640f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893083790713:android:b81777a3fede1ea9b913a8",
+        "android_client_info": {
+          "package_name": "vn.lekhaihoan.korean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893083790713-ohbmdprebivslms41ife0nkqtq8rt7d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3JJKge7S1Q2ijZ1hIQvu6B8DwKJY8mhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893083790713-ohbmdprebivslms41ife0nkqtq8rt7d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

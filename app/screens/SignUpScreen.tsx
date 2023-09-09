@@ -1,33 +1,34 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native"
+import { View, TouchableOpacity, StyleSheet } from "react-native"
 import React, { useState } from "react"
-import { Button, Screen, Spacer, Text, TextField } from "app/components"
+import { Screen, Spacer, TextField, Button, Text } from "app/components"
 import { colors } from "app/theme"
 import { useNavigation } from "@react-navigation/native"
 import { useStores } from "app/models"
 
-export const LoginScreen = () => {
+export const SignUpScreen = () => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [confirmPassword, setConfirmPassword] = useState()
 
   const navigation = useNavigation<any>()
 
   const {
-    authenticationStore: { login },
+    authenticationStore: { signUp },
   } = useStores()
 
-  const onSignUp = () => {
-    navigation.navigate("SignUp")
-  }
-  const onLogin = async () => {
-    const res = await login(email, password)
-    if (res === "success") {
-      navigation.replace("TabBar")
-    }
+  const onSignUp = async () => {
+   const res = await signUp(email, password)
+   if (res === "success") {
+    
+   }
   }
 
+  const onLogin = () => {
+    navigation.navigate("Login")
+  }
   return (
     <Screen style={styles.container} keyboardShouldPersistTaps="handled">
-      <Text style={styles.title}>Đăng nhập</Text>
+      <Text style={styles.title}>Đăng ký</Text>
       <Spacer height={30} />
       <TextField
         placeholder="Nhập email"
@@ -37,27 +38,32 @@ export const LoginScreen = () => {
       <Spacer height={20} />
       <TextField
         placeholder="Nhập mật khẩu"
-        secureTextEntry={true}
         value={password}
         onChangeText={(text: any) => setPassword(text)}
+        secureTextEntry={true}
       />
-      <Spacer height={10} />
-      <TouchableOpacity>
-        <Text style={styles.forgotPassword}>Quên mật khẩu</Text>
-      </TouchableOpacity>
       <Spacer height={20} />
-      <Button title="Đăng nhập" onPress={onLogin} />
+      <TextField
+        placeholder="Nhập lại mật khẩu"
+        secureTextEntry={true}
+        value={confirmPassword}
+        onChangeText={(text: any) => setConfirmPassword(text)}
+      />
+
+      <Spacer height={30} />
+      <Button title="Đăng ký" onPress={onSignUp} />
       <Spacer height={20} />
       <View style={[styles.row, styles.center]}>
-        <Text style={styles.grayText}>Chưa có tài khoản?</Text>
+        <Text style={styles.grayText}>Đã có tài khoản?</Text>
         <Spacer width={4} />
-        <TouchableOpacity onPress={onSignUp}>
-          <Text style={styles.forgotPassword}>Đăng ký</Text>
+        <TouchableOpacity onPress={onLogin}>
+          <Text style={styles.forgotPassword}>Đăng nhập</Text>
         </TouchableOpacity>
       </View>
     </Screen>
   )
 }
+
 const styles = StyleSheet.create({
   container: {
     padding: 24,

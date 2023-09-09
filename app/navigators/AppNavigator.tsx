@@ -21,6 +21,7 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 import { colors } from "app/theme"
 import { loadString, saveString } from "app/utils/storage"
 import * as Constant from "app/constants"
+import { TabBar } from "./TabNavigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -37,9 +38,11 @@ import * as Constant from "app/constants"
  */
 export type AppStackParamList = {
   Welcome: undefined
-  Login: undefined // @demo remove-current-line
-  // 🔥 Your screens go here
-  // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
+  Login: undefined
+  SignUp: undefined
+  TabBar: undefined
+  LessonDetail: undefined
+  Vocabulary: undefined
 }
 
 /**
@@ -79,16 +82,14 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName={isFirstTime ? "Welcome" : "Login"}
-      // @demo remove-current-line
+      initialRouteName={isFirstTime ? "Welcome" : isAuthenticated ? "TabBar" : "Login"}
     >
       <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
-
       <Stack.Screen name="Login" component={Screens.LoginScreen} />
-
-      {/* @demo remove-block-end */}
-      {/** 🔥 Your screens go here */}
-      {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
+      <Stack.Screen name="SignUp" component={Screens.SignUpScreen} />
+      <Stack.Screen name="TabBar" component={TabBar} />
+      <Stack.Screen name="LessonDetail" component={Screens.LessonDetailScreen} />
+      <Stack.Screen name="Vocabulary" component={Screens.VocabularyScreen} />
     </Stack.Navigator>
   )
 })
