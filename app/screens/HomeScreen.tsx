@@ -18,8 +18,8 @@ export const HomeScreen = () => {
     setSelectedList(tmpList)
   }, [subject])
 
-  const onLessonDetail = ({ title }) => {
-    navigation.navigate("LessonDetail", { title })
+  const onLessonDetail = ({ title, lessonNumber }) => {
+    navigation.navigate("LessonDetail", { title, lessonNumber })
   }
 
   const renderButton = (key: number) => {
@@ -96,7 +96,9 @@ export const HomeScreen = () => {
                 subTitle={item.koreanTitle}
                 image={item.image}
                 lessonNumber={`Bài ${item.lessonNumber}`}
-                onPress={() => onLessonDetail({ title: item.vietnameseTitle })}
+                onPress={() =>
+                  onLessonDetail({ title: item.vietnameseTitle, lessonNumber: item.lessonNumber })
+                }
               />
               <Spacer height={20} />
             </>

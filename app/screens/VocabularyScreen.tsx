@@ -1,38 +1,32 @@
 import { ScrollView, View, StyleSheet, FlatList } from "react-native"
-import React, { useState } from "react"
+import React, { useCallback, useState } from "react"
 import { Button, FlashCard, Header, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
+import { useStores } from "app/models"
 
 export const VocabularyScreen = () => {
+  const {
+    lessonsStore: { vocabularyList },
+  } = useStores()
   const [subject, setSubject] = useState(0)
-  const [selectedList, setSelectedList] = useState([0, 1, 2, 3, 4])
-  const buttonArray = [0, 1, 2]
-  const renderButton = (key: number) => {
-    let title: string
-    switch (key) {
-      case 0:
-        title = "Quốc gia"
-        break
-      case 1:
-        title = "Nghề nghiệp"
-        break
-      case 2:
-        title = "Lời chào"
-        break
-    }
-    const onPress = () => {
-      setSubject(key)
+
+  const buttonArray = vocabularyList
+  const renderButton = (e: any, index: any) => {
+    const onPress = (i: number) => {
+      setSubject(i)
+
+      console.log(vocabularyList[i])
     }
 
     return (
       <Button
-        key={key}
-        title={title}
-        style={key === subject ? styles.activeLevelOptionButton : styles.levelOptionButton}
+        key={index}
+        title={e.vTitle}
+        style={index === subject ? styles.activeLevelOptionButton : styles.levelOptionButton}
         textStyle={
-          key === subject ? styles.activeLevelOptionButtonText : styles.levelOptionButtonText
+          index === subject ? styles.activeLevelOptionButtonText : styles.levelOptionButtonText
         }
-        onPress={onPress}
+        onPress={() => onPress(index)}
       />
     )
   }
@@ -49,8 +43,8 @@ export const VocabularyScreen = () => {
           showsHorizontalScrollIndicator={false}
         >
           <View style={styles.level}>
-            {buttonArray.map((e) => {
-              return renderButton(e)
+            {buttonArray.map((e, index) => {
+              return renderButton(e, index)
             })}
           </View>
         </ScrollView>
@@ -61,8 +55,10 @@ export const VocabularyScreen = () => {
           style={styles.horizontalScrollView}
           contentContainerStyle={styles.horizontalScrollViewContent}
           showsHorizontalScrollIndicator={false}
-          data={selectedList}
-          renderItem={({ item }) => <FlashCard />}
+          data={vocabularyList[subject].content}
+          renderItem={({ item }) => (
+            <FlashCard image={item.image} vietnamese={item.vietnamese} korean={item.korean} />
+          )}
         />
       </View>
     </Screen>

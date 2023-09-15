@@ -2,10 +2,13 @@ import { View, TextInput, TextInputProps, StyleSheet } from "react-native"
 import React from "react"
 import { colors } from "app/theme"
 
-interface ITextField extends TextInputProps {}
+interface ITextField extends TextInputProps {
+  style?: any
+}
 
 export const TextField = (props: ITextField) => {
-  return <TextInput {...props} style={styles.container} />
+  const { style } = props
+  return <TextInput {...props} style={[styles.container, style]} />
 }
 
 const styles = StyleSheet.create({

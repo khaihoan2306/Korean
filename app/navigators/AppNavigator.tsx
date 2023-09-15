@@ -41,8 +41,12 @@ export type AppStackParamList = {
   Login: undefined
   SignUp: undefined
   TabBar: undefined
+  Home: undefined
   LessonDetail: undefined
   Vocabulary: undefined
+  Grammar: undefined
+  VocabularyReview: undefined
+  GrammarReview: undefined
 }
 
 /**
@@ -82,14 +86,18 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName={isFirstTime ? "Welcome" : isAuthenticated ? "TabBar" : "Login"}
+      initialRouteName={isFirstTime ? "Welcome" : "Home"}
     >
       <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
       <Stack.Screen name="Login" component={Screens.LoginScreen} />
       <Stack.Screen name="SignUp" component={Screens.SignUpScreen} />
       <Stack.Screen name="TabBar" component={TabBar} />
+      <Stack.Screen name="Home" component={Screens.HomeScreen} />
       <Stack.Screen name="LessonDetail" component={Screens.LessonDetailScreen} />
       <Stack.Screen name="Vocabulary" component={Screens.VocabularyScreen} />
+      <Stack.Screen name="Grammar" component={Screens.GrammarScreen} />
+      <Stack.Screen name="VocabularyReview" component={Screens.VocabularyReviewScreen} />
+      <Stack.Screen name="GrammarReview" component={Screens.GrammarReviewScreen} />
     </Stack.Navigator>
   )
 })
