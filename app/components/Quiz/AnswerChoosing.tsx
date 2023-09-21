@@ -1,49 +1,70 @@
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native"
-import React from "react"
+import React, { useState } from "react"
 import { Text } from "../Text"
 import { ScreenDimension } from "app/constants"
 import { Spacer } from "../Spacer"
 import { colors } from "app/theme"
 
 interface IAnswerChoosing {
-  image?: any
   answers?: any
-  question?: string
-  correctAnswer?: string
+  correctAnswer?: any
+  onCorrect?(): void
+  onIncorrect?(): void
 }
 
 export const AnswerChoosing = (props: IAnswerChoosing) => {
+  const [isSelected, setIsSelected] = useState()
+  const { correctAnswer, answers, onCorrect, onIncorrect } = props
+
+  const onSelect = (e: any, index: any) => {
+    setIsSelected(index)
+    if (e.korean == correctAnswer.korean) {
+      onCorrect()
+      setIsSelected(undefined)
+    } else {
+      onIncorrect()
+      setIsSelected(undefined)
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Hãy chọn đáp án đúng</Text>
       <Spacer height={30} />
       <View style={styles.question}>
-        <Image
-          source={{
-            uri: "https://insidesmallbusiness.com.au/wp-content/uploads/2021/04/bigstock-Close-up-face-of-mature-busine-353046845-e1625116749968.jpg",
-          }}
-          style={styles.image}
-        />
+        {correctAnswer.image && (
+          <Image
+            source={{
+              uri: correctAnswer.image,
+            }}
+            style={styles.image}
+          />
+        )}
         <Spacer height={20} />
-        <Text style={styles.questionText}>Viet Nam</Text>
+        <Text style={styles.questionText}>
+          {correctAnswer.image ? correctAnswer.vietnamese : correctAnswer.korean}
+        </Text>
       </View>
       <Spacer height={30} />
       <View style={styles.answer}>
-        <TouchableOpacity style={styles.option}>
-          <Text style={styles.optionText}>Dap an 2 alsdlk</Text>
-        </TouchableOpacity>
-        <Spacer height={15} />
-        <TouchableOpacity style={styles.option}>
-          <Text style={styles.optionText}>Dap an 2 alsdlk</Text>
-        </TouchableOpacity>
-        <Spacer height={15} />
-        <TouchableOpacity style={styles.option}>
-          <Text style={styles.optionText}>Dap an 2 alsdlk</Text>
-        </TouchableOpacity>
-        <Spacer height={15} />
-        <TouchableOpacity style={styles.option}>
-          <Text style={styles.optionText}>Dap an 2 alsdlk</Text>
-        </TouchableOpacity>
+        {answers.map((e, index) => {
+          return (
+            <View key={index}>
+              <TouchableOpacity
+                style={[
+                  styles.option,
+                  isSelected === index && (e == correctAnswer ? styles.correct : styles.incorrect),
+                ]}
+                onPress={() => onSelect(e, index)}
+              >
+                <Text style={[styles.optionText, isSelected === index && styles.selectedText]}>
+                  {correctAnswer.image ? e.korean : e.vietnamese}
+                </Text>
+              </TouchableOpacity>
+              <Spacer height={15} />
+            </View>
+          )
+        })}
       </View>
     </View>
   )
@@ -76,11 +97,22 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10,
     borderColor: colors.palette.green600,
+    alignItems: "center",
     padding: 10,
   },
   optionText: {
     color: colors.palette.secondaryGreen800,
     fontFamily: "Jost-SemiBold",
     fontSize: 18,
+  },
+  incorrect: {
+    backgroundColor: "red",
+    borderColor: "red",
+  },
+  correct: {
+    backgroundColor: colors.palette.green600,
+  },
+  selectedText: {
+    color: colors.palette.white,
   },
 })

@@ -1,5 +1,5 @@
 import { ScrollView, View, StyleSheet, FlatList } from "react-native"
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import { Button, FlashCard, Header, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
 import { useStores } from "app/models"
@@ -9,27 +9,30 @@ export const VocabularyScreen = () => {
     lessonsStore: { vocabularyList },
   } = useStores()
   const [subject, setSubject] = useState(0)
+  const flatListRef = useRef<any>()
 
   const buttonArray = vocabularyList
-  const renderButton = (e: any, index: any) => {
-    const onPress = (i: number) => {
-      setSubject(i)
+  const renderButton = useCallback(
+    (e: any, index: any) => {
+      const onPress = (i: number) => {
+        setSubject(i)
+        flatListRef?.current?.scrollToIndex({ animated: true, index: 0 })
+      }
 
-      console.log(vocabularyList[i])
-    }
-
-    return (
-      <Button
-        key={index}
-        title={e.vTitle}
-        style={index === subject ? styles.activeLevelOptionButton : styles.levelOptionButton}
-        textStyle={
-          index === subject ? styles.activeLevelOptionButtonText : styles.levelOptionButtonText
-        }
-        onPress={() => onPress(index)}
-      />
-    )
-  }
+      return (
+        <Button
+          key={index}
+          title={e.vTitle}
+          style={index === subject ? styles.activeLevelOptionButton : styles.levelOptionButton}
+          textStyle={
+            index === subject ? styles.activeLevelOptionButtonText : styles.levelOptionButtonText
+          }
+          onPress={() => onPress(index)}
+        />
+      )
+    },
+    [subject],
+  )
 
   return (
     <Screen style={{ flex: 1 }}>
@@ -51,6 +54,7 @@ export const VocabularyScreen = () => {
         <Spacer height={20} />
 
         <FlatList
+          ref={flatListRef}
           horizontal
           style={styles.horizontalScrollView}
           contentContainerStyle={styles.horizontalScrollViewContent}

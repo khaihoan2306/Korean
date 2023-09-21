@@ -15,14 +15,8 @@ export const FlashCard = (props: IFlashCard) => {
   const { image, korean, vietnamese } = props
   return (
     <TouchableOpacity style={styles.container}>
-      {image && (
-        <Image
-          style={styles.image}
-          source={{
-            uri: image,
-          }}
-        />
-      )}
+      {image && <Image style={styles.image} source={{ uri: image }} />}
+      <Spacer height={10} />
       <Text style={styles.korean}>{korean}</Text>
       <Spacer height={20} />
       <Text style={styles.vietnamese}>{vietnamese}</Text>
@@ -38,6 +32,8 @@ const styles = StyleSheet.create({
     width: 0.7 * ScreenDimension.WIDTH,
     alignItems: "center",
     marginRight: 20,
+    justifyContent: "center",
+    minHeight: 0.6 * ScreenDimension.HEIGHT,
   },
   korean: {
     fontSize: 24,
