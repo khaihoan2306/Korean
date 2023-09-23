@@ -3,15 +3,11 @@ import { withSetPropAction } from "./helpers/withSetPropAction"
 import firestore from '@react-native-firebase/firestore'
 import { shuffleArray } from "app/utils/shuffleArray"
 
-interface IQuestion {
-  answers: any
-  correctAnswer: any
-}
-
 export const LessonsStoreModel = types
   .model("LessonsStore")
   .props({
     vocabularyList: types.maybe(types.array(types.frozen<any>())),
+    grammarList: types.maybe(types.array(types.frozen<any>())),
     lessonNumber: types.maybe(types.string),
     question: types.maybe(types.frozen<any>())
   })
@@ -24,8 +20,7 @@ export const LessonsStoreModel = types
       if (data) {
         store.setProp("lessonNumber", number)
         store.setProp("vocabularyList", data.vocabulary)
-
-
+        store.setProp("grammarList", data.grammar)
       }
     },
     shuffleQuestions() {

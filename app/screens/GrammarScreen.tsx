@@ -1,36 +1,73 @@
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, FlatList } from "react-native"
 import React from "react"
 import { Header, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
 import Icon from "react-native-vector-icons/Ionicons"
+import { useStores } from "app/models"
+import { useSafeAreaInsetsStyle } from "app/utils/useSafeAreaInsetsStyle"
 
 export const GrammarScreen = () => {
-  return (
-    <Screen>
-      <Header title="Ngữ pháp" />
-      <View style={styles.container}>
+  const {
+    lessonsStore: { grammarList },
+  } = useStores()
+  const containerInsets = useSafeAreaInsetsStyle(["top", "bottom"])
+
+  const Grammar = (props: any) => {
+    const { kTitle, vTitle, content, example } = props
+
+    return (
+      <>
         <View style={styles.titleContainer}>
           <Icon name="caret-forward-outline" size={24} color={colors.palette.green800} />
-          <Text style={styles.title}>입니다</Text>
+          <Text style={styles.title}>{kTitle}</Text>
           <Spacer width={10} />
-          <Text style={styles.title}>là...</Text>
+          <Text style={styles.title}>{vTitle}</Text>
         </View>
         <Spacer height={10} />
         <View>
-          <Text style={styles.content}>
-            이다, gắn vào danh từ, có nghĩa tương đương trong tiếng Việt là 'là'. Hình thức kính ngữ
-            của '이다' là '입니다', thường dùng trong câu trần thuật.
-          </Text>
+          <Text style={styles.content}>{content}</Text>
         </View>
-        <Spacer height={10} />
+        <Spacer height={20} />
         <View style={styles.exampleContainer}>
-          <View style={styles.row}>
-            <Text style={styles.example}>화입니다</Text>
-            <Text style={styles.example}>Tôi là Hoa.</Text>
-          </View>
+          <FlatList
+            scrollEnabled={false}
+            data={example}
+            renderItem={({ item }) => {
+              return (
+                <View style={styles.row}>
+                  <Text style={styles.example}>{item.korean}</Text>
+                  <Text style={styles.example}>{item.vietnamese}</Text>
+                </View>
+              )
+            }}
+          />
         </View>
+        <Spacer height={20} />
+      </>
+    )
+  }
+
+  return (
+    <View style={containerInsets}>
+      <Header title="Ngữ pháp" />
+      <View style={styles.container}>
+        <FlatList
+          contentContainerStyle={styles.flatList}
+          showsVerticalScrollIndicator={false}
+          data={grammarList}
+          renderItem={({ item }) => {
+            return (
+              <Grammar
+                kTitle={item.kTitle}
+                vTitle={item.vTitle}
+                content={item.content}
+                example={item.example}
+              />
+            )
+          }}
+        />
       </View>
-    </Screen>
+    </View>
   )
 }
 const styles = StyleSheet.create({
@@ -63,5 +100,8 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: "row",
+  },
+  flatList: {
+    paddingBottom: 70,
   },
 })
