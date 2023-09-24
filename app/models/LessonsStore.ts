@@ -8,6 +8,7 @@ export const LessonsStoreModel = types
   .props({
     vocabularyList: types.maybe(types.array(types.frozen<any>())),
     grammarList: types.maybe(types.array(types.frozen<any>())),
+    practiceList: types.maybe(types.array(types.frozen<any>())),
     lessonNumber: types.maybe(types.string),
     question: types.maybe(types.frozen<any>())
   })
@@ -21,6 +22,7 @@ export const LessonsStoreModel = types
         store.setProp("lessonNumber", number)
         store.setProp("vocabularyList", data.vocabulary)
         store.setProp("grammarList", data.grammar)
+        store.setProp("practiceList", data.practice)
       }
     },
     shuffleQuestions() {

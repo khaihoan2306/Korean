@@ -20,7 +20,7 @@ export const VocabularyReviewScreen = () => {
 
   return (
     <Screen>
-      <Header />
+      <Header title="Ôn tập từ vựng" />
       <View style={styles.container}>
         <AnswerChoosing
           answers={question.answers}

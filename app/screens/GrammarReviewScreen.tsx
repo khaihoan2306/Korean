@@ -6,7 +6,7 @@ import { AnswerInput } from "app/components/Quiz"
 export const GrammarReviewScreen = () => {
   return (
     <Screen>
-      <Header />
+      <Header title="Ôn tập ngữ pháp" />
       <View style={styles.container}>
         <AnswerInput />
       </View>

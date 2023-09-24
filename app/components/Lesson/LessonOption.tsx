@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
     padding: 20,
     width: 150,
     height: 150,
+    borderWidth: 2,
+    borderColor: colors.palette.secondaryGreen400,
   },
   text: {
     fontSize: 20,

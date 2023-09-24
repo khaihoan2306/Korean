@@ -10,7 +10,7 @@ export const LessonDetailScreen = (props: any) => {
   const { lessonsStore } = useStores()
 
   useEffect(() => {
-    lessonsStore.fetchLessons(`bai-${lessonNumber}`)
+    if (lessonsStore.lessonNumber !== lessonNumber) lessonsStore.fetchLessons(`bai-${lessonNumber}`)
   }, [])
 
   const onVocabulary = () => {
