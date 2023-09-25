@@ -16,6 +16,7 @@ export const VocabularyReviewScreen = () => {
 
   useEffect(() => {
     shuffleQuestions()
+    setQuestion(lessonsStore.question)
   }, [])
 
   return (
@@ -23,8 +24,8 @@ export const VocabularyReviewScreen = () => {
       <Header title="Ôn tập từ vựng" />
       <View style={styles.container}>
         <AnswerChoosing
-          answers={question.answers}
-          correctAnswer={question.correctAnswer}
+          answers={question?.answers}
+          correctAnswer={question?.correctAnswer}
           onCorrect={() => {
             setIsCorrect(true)
             setIsVisible(true)
@@ -43,7 +44,7 @@ export const VocabularyReviewScreen = () => {
           shuffleQuestions()
           setQuestion(lessonsStore.question)
         }}
-        data={question.correctAnswer}
+        data={question?.correctAnswer}
       />
     </Screen>
   )

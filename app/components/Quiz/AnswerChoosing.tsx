@@ -32,22 +32,22 @@ export const AnswerChoosing = (props: IAnswerChoosing) => {
       <Text style={styles.title}>Hãy chọn đáp án đúng</Text>
       <Spacer height={30} />
       <View style={styles.question}>
-        {correctAnswer.image && (
+        {correctAnswer?.image && (
           <Image
             source={{
-              uri: correctAnswer.image,
+              uri: correctAnswer?.image,
             }}
             style={styles.image}
           />
         )}
         <Spacer height={20} />
         <Text style={styles.questionText}>
-          {correctAnswer.image ? correctAnswer.vietnamese : correctAnswer.korean}
+          {correctAnswer?.image ? correctAnswer?.vietnamese : correctAnswer?.korean}
         </Text>
       </View>
       <Spacer height={30} />
       <View style={styles.answer}>
-        {answers.map((e, index) => {
+        {answers?.map((e, index) => {
           return (
             <View key={index}>
               <TouchableOpacity

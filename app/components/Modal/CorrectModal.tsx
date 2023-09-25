@@ -16,10 +16,10 @@ export const CorrectModal = (props: any) => {
           {correct === true ? "Chính xác!" : "Chưa chính xác!"}
         </Text>
         <Spacer height={20} />
-        {data.image && <Image source={{ uri: data.image }} style={styles.image} />}
-        <Text style={styles.text}>{data.korean}</Text>
+        {data?.image && <Image source={{ uri: data?.image }} style={styles.image} />}
+        <Text style={styles.text}>{data?.korean}</Text>
         <Spacer height={20} />
-        <Text style={styles.text}>{data.vietnamese}</Text>
+        <Text style={styles.text}>{data?.vietnamese}</Text>
         <Spacer height={30} />
         <Button onPress={onPress} title="Tiếp theo" />
       </View>
