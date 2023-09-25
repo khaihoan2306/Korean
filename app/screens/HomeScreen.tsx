@@ -58,14 +58,14 @@ export const HomeScreen = () => {
   return (
     <Screen>
       <View style={styles.header}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Icon
             name="notifications-outline"
             color={colors.palette.white}
             size={30}
             style={styles.notification}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Spacer height={10} />
         <Text style={styles.welcomeText}>Tiếng Hàn sơ cấp cho người mới bắt đầu!</Text>
         <Spacer height={20} />
