@@ -81,6 +81,7 @@ const AppStack = observer(function AppStack() {
     }
     checkIsFirstTime()
   }, [])
+  if (isFirstTime === undefined) return null
 
   // @demo remove-block-end
   return (

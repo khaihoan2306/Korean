@@ -9,24 +9,21 @@ import { useNavigation } from "@react-navigation/native"
 const slides = [
   {
     key: "one",
-    title: "Title 1",
-    text: "Description.\nSay something cool",
+    //title: "Title 1",
+    text: "Nội dung dựa trên Giáo trình tiếng Hàn tổng hợp dành cho người Việt Nam",
     image: Images.slider1,
-    backgroundColor: "#59b2ab",
   },
   {
     key: "two",
-    title: "Title 2",
-    text: "Other cool stuff",
+    //title: "Title 2",
+    text: "Phù hợp với những người bắt đầu làm quen với tiếng Hàn",
     image: Images.slider2,
-    backgroundColor: "#febe29",
   },
   {
     key: "three",
-    title: "Rocket guy",
-    text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
+    // title: "Rocket guy",
+    text: "Hãy luyện tập mỗi ngày để trở nên thành thạo trong giao tiếp",
     image: Images.slider3,
-    backgroundColor: "#22bcb5",
   },
 ]
 
@@ -34,7 +31,7 @@ export const WelcomeScreen = () => {
   const navigation = useNavigation<any>()
 
   const onDone = () => {
-    navigation.replace("Login")
+    navigation.replace("Home")
   }
 
   const renderItem = ({ item }) => {
@@ -64,6 +61,9 @@ export const WelcomeScreen = () => {
 const styles = StyleSheet.create({
   container: { alignItems: "center", justifyContent: "center", padding: 24 },
   title: {},
-  text: {},
+  text: {
+    fontSize: 24,
+    textAlign: "justify",
+  },
   image: { width: "100%", resizeMode: "contain" },
 })
