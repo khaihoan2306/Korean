@@ -30,8 +30,8 @@ export const HomeScreen = () => {
   const onSendData = () => {
     firestore()
       .collection("lessons")
-      .doc("bai-16")
-      .update(bai.bai03)
+      .doc("bai-05")
+      .update(bai.bai05)
       .then(() => {
         console.log("User added!")
       })
@@ -128,7 +128,7 @@ export const HomeScreen = () => {
               <Spacer height={20} />
             </>
           )}
-          ListFooterComponent={<Spacer height={500} />}
+          ListFooterComponent={<Spacer height={600} />}
         />
       </View>
     </Screen>
