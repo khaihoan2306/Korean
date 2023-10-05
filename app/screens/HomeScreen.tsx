@@ -5,6 +5,11 @@ import { colors } from "app/theme"
 import Icon from "react-native-vector-icons/Ionicons"
 import { useNavigation } from "@react-navigation/native"
 import { lessonList } from "app/constants"
+import firestore from "@react-native-firebase/firestore"
+import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads"
+import * as bai from "app/constants/data"
+
+const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-4650295610990607/2368592207"
 
 export const HomeScreen = () => {
   const [subject, setSubject] = useState(0)
@@ -20,6 +25,16 @@ export const HomeScreen = () => {
 
   const onLessonDetail = ({ title, lessonNumber }) => {
     navigation.navigate("LessonDetail", { title, lessonNumber })
+  }
+
+  const onSendData = () => {
+    firestore()
+      .collection("lessons")
+      .doc("bai-16")
+      .update(bai.bai03)
+      .then(() => {
+        console.log("User added!")
+      })
   }
 
   const renderButton = (key: number) => {
@@ -58,7 +73,7 @@ export const HomeScreen = () => {
   return (
     <Screen>
       <View style={styles.header}>
-        {/* <TouchableOpacity>
+        {/* <TouchableOpacity onPress={onSendData}>
           <Icon
             name="notifications-outline"
             color={colors.palette.white}
@@ -84,6 +99,16 @@ export const HomeScreen = () => {
         <Spacer height={10} />
       </View>
       <View style={styles.body}>
+        <View style={styles.bannerAd}>
+          <BannerAd
+            unitId={adUnitId}
+            size={BannerAdSize.BANNER}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+          />
+        </View>
+        <Spacer height={10} />
         <Text style={styles.title}>Danh sách</Text>
         <Spacer height={10} />
         <FlatList
@@ -110,6 +135,9 @@ export const HomeScreen = () => {
   )
 }
 const styles = StyleSheet.create({
+  bannerAd: {
+    alignItems: "center",
+  },
   body: {
     paddingHorizontal: 24,
     paddingVertical: 10,

@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 3,
     borderColor: colors.palette.green900,
+    backgroundColor: colors.palette.secondaryGreen200,
     padding: 24,
     width: 0.7 * ScreenDimension.WIDTH,
     alignItems: "center",

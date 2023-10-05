@@ -55,5 +55,9 @@
     "plugins": [
       "expo-localization"
     ]
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-4650295610990607~6394670962",
+    "ios_app_id": "ca-app-pub-xxxxxxxx~xxxxxxxx"
   }
 }

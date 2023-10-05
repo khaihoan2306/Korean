@@ -2,9 +2,11 @@ import { View, StyleSheet, FlatList } from "react-native"
 import React from "react"
 import { Header, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
-import Icon from "react-native-vector-icons/Ionicons"
 import { useStores } from "app/models"
 import { useSafeAreaInsetsStyle } from "app/utils/useSafeAreaInsetsStyle"
+import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads"
+
+const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-4650295610990607/8879295705"
 
 export const GrammarScreen = () => {
   const {
@@ -13,15 +15,13 @@ export const GrammarScreen = () => {
   const containerInsets = useSafeAreaInsetsStyle(["top", "bottom"])
 
   const Grammar = (props: any) => {
-    const { kTitle, vTitle, content, example } = props
+    const { kTitle, vTitle, content, example, index } = props
 
     return (
       <>
         <View style={styles.titleContainer}>
-          <Icon name="caret-forward-outline" size={24} color={colors.palette.green800} />
-          <Text style={styles.title}>{kTitle}</Text>
+          <Text style={styles.title}>{`${index + 1}) ${kTitle} ${vTitle}`}</Text>
           <Spacer width={10} />
-          <Text style={styles.title}>{vTitle}</Text>
         </View>
         <Spacer height={10} />
         <View>
@@ -50,14 +50,25 @@ export const GrammarScreen = () => {
   return (
     <View style={containerInsets}>
       <Header title="Ngữ pháp" />
+      <Spacer height={10} />
+      <View style={styles.bannerAd}>
+        <BannerAd
+          unitId={adUnitId}
+          size={BannerAdSize.BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+      </View>
       <View style={styles.container}>
         <FlatList
           contentContainerStyle={styles.flatList}
           showsVerticalScrollIndicator={false}
           data={grammarList}
-          renderItem={({ item }) => {
+          renderItem={({ item, index }) => {
             return (
               <Grammar
+                index={index}
                 kTitle={item.kTitle}
                 vTitle={item.vTitle}
                 content={item.content}
@@ -81,7 +92,6 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flexDirection: "row",
-    alignItems: "center",
   },
   exampleContainer: {
     backgroundColor: colors.palette.green300,
@@ -102,6 +112,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   flatList: {
-    paddingBottom: 70,
+    paddingBottom: 300,
+  },
+  bannerAd: {
+    alignItems: "center",
   },
 })

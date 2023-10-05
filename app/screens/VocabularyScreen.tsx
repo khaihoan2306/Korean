@@ -3,6 +3,9 @@ import React, { useCallback, useRef, useState } from "react"
 import { Button, FlashCard, Header, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
 import { useStores } from "app/models"
+import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads"
+
+const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-4650295610990607/6163586730"
 
 export const VocabularyScreen = () => {
   const {
@@ -65,6 +68,16 @@ export const VocabularyScreen = () => {
           )}
         />
       </View>
+      <Spacer height={20} />
+      <View style={styles.bannerAd}>
+        <BannerAd
+          unitId={adUnitId}
+          size={BannerAdSize.BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+      </View>
     </Screen>
   )
 }
@@ -102,5 +115,8 @@ const styles = StyleSheet.create({
   },
   activeLevelOptionButtonText: {
     color: colors.palette.green100,
+  },
+  bannerAd: {
+    alignItems: "center",
   },
 })
