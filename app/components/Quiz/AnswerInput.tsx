@@ -1,11 +1,18 @@
 import { View, StyleSheet } from "react-native"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Text } from "../Text"
 import { TextField } from "../TextField"
 import { colors } from "app/theme"
 import { Spacer } from "../Spacer"
 import { Button } from "../Button"
 import { useStores } from "app/models"
+import { AdEventType, InterstitialAd, TestIds } from "react-native-google-mobile-ads"
+
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : "ca-app-pub-4650295610990607/4937602147"
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+  requestNonPersonalizedAdsOnly: true,
+})
 
 export const AnswerInput = () => {
   const [index, setIndex] = useState(0)
@@ -13,6 +20,19 @@ export const AnswerInput = () => {
   const {
     lessonsStore: { practiceList },
   } = useStores()
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+      setLoaded(true)
+    })
+
+    // Start loading the interstitial straight away
+    interstitial.load()
+
+    // Unsubscribe from events on unmount
+    return unsubscribe
+  }, [])
 
   const onShowAnswer = () => {
     if (!isShownAnswer) {
@@ -20,6 +40,7 @@ export const AnswerInput = () => {
     } else {
       setIsShownAnswer(false)
       setIndex(index + 1 < practiceList?.length ? index + 1 : 0)
+      if (index === practiceList?.length - 1 && interstitial.loaded) interstitial.show()
     }
   }
 
