@@ -26,8 +26,8 @@ export const bai05 = {
       kTitle: "-아/어요",
       vTitle: "",
       example: [
-        { korean: "A: ", vietnamese: "A: Bây giờ làm gì?" },
-        { korean: "B: ", vietnamese: "B: Học ở trường." },
+        { korean: "A: 지금 무엇울 해요?", vietnamese: "A: Bây giờ làm gì?" },
+        { korean: "B: 학교에서 공부해요.", vietnamese: "B: Học ở trường." },
       ],
     },
     {
@@ -42,11 +42,15 @@ export const bai05 = {
       ],
     },
     {
-      content: "*<Tham khảo> trong trường hợp kết hợp với danh từ thì dùng -입니다/-입나까 cho câu trân trọng, dùng -이에요/-예요 cho câu thân mật.",
+      content:
+        "*<Tham khảo> trong trường hợp kết hợp với danh từ thì dùng -입니다/-입나까 cho câu trân trọng, dùng -이에요/-예요 cho câu thân mật.",
       kTitle: "",
       vTitle: "",
       example: [
-        { korean: "선생님입니다./입니까? -> 선생님이에요./이에요?", vietnamese: "Là thầy giáo (phải không?)" },
+        {
+          korean: "선생님입니다./입니까? -> 선생님이에요./이에요?",
+          vietnamese: "Là thầy giáo (phải không?)",
+        },
         { korean: "의사입니다./입니까? -> 의사예요./예요?", vietnamese: "Là bác sĩ (phải không?)" },
       ],
     },
@@ -56,11 +60,15 @@ export const bai05 = {
       vTitle: "Đi đến",
       example: [
         { korean: "지금 학교에 가요.", vietnamese: "Bây giờ (tôi) đi đến trường." },
-        { korean: "저는 한국대학교에 다녀요.", vietnamese: "Tôi đang đi học ở trường Đại học Hàn Quốc." },
+        {
+          korean: "저는 한국대학교에 다녀요.",
+          vietnamese: "Tôi đang đi học ở trường Đại học Hàn Quốc.",
+        },
       ],
     },
     {
-      content: "Đặt trước động từ hoặc tính từ để chỉ nghĩa phủ định. Trong trường hợp động từ hoặc tính từ có dạng 'danh từ + 하다' thì 안 được đặt sau danh từ và trước 하다.",
+      content:
+        "Đặt trước động từ hoặc tính từ để chỉ nghĩa phủ định. Trong trường hợp động từ hoặc tính từ có dạng 'danh từ + 하다' thì 안 được đặt sau danh từ và trước 하다.",
       kTitle: "안",
       vTitle: "không",
       example: [
@@ -69,4 +77,5 @@ export const bai05 = {
       ],
     },
   ],
+  practice: [],
 }

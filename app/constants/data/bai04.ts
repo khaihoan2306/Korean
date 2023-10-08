@@ -37,4 +37,5 @@ export const bai04 = {
       ],
     },
   ],
+  practice: [],
 }
