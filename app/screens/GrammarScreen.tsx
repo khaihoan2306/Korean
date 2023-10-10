@@ -19,29 +19,33 @@ export const GrammarScreen = () => {
 
     return (
       <>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{`${index + 1}) ${kTitle} ${vTitle}`}</Text>
-          <Spacer width={10} />
-        </View>
+        {(kTitle || vTitle) && (
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{`● ${kTitle}  ${vTitle}`}</Text>
+            <Spacer width={10} />
+          </View>
+        )}
         <Spacer height={10} />
-        <View>
-          <Text style={styles.content}>{content}</Text>
-        </View>
+
+        <Text style={styles.content}>{content}</Text>
+
         <Spacer height={20} />
-        <View style={styles.exampleContainer}>
-          <FlatList
-            scrollEnabled={false}
-            data={example}
-            renderItem={({ item }) => {
-              return (
-                <View style={styles.row}>
-                  <Text style={styles.example}>{item.korean}</Text>
-                  <Text style={styles.example}>{item.vietnamese}</Text>
-                </View>
-              )
-            }}
-          />
-        </View>
+        {example?.length > 0 && (
+          <View style={styles.exampleContainer}>
+            <FlatList
+              scrollEnabled={false}
+              data={example}
+              renderItem={({ item }) => {
+                return (
+                  <View style={styles.row}>
+                    {item.korean && <Text style={styles.example}>{item.korean}</Text>}
+                    {item.vietnamese && <Text style={styles.example}>{item.vietnamese}</Text>}
+                  </View>
+                )
+              }}
+            />
+          </View>
+        )}
         <Spacer height={20} />
       </>
     )
