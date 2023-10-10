@@ -37,5 +37,10 @@ export const bai04 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "생일이 언제입니까?", vietnamese: "Ngày sinh của bạn là ngày nào?" },
+    { korean: "내일은 목요일입니다.", vietnamese: "Ngày mai là thứ năm." },
+    { korean: "23일에 친구를 만납니다.", vietnamese: "(Tôi) gặp bạn vào ngày 23." },
+    { korean: "오늘이 무슨 요일입니까?", vietnamese: "Hôm nay là thứ mấy?" },
+  ],
 }

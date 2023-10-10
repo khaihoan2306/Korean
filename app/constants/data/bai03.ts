@@ -46,5 +46,10 @@ export const bai03 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "지금 무엇을 합니까?", vietnamese: "Bạn đang làm gì vậy?" },
+    { korean: "누구를 만납니까?", vietnamese: "Bạn gặp ai?" },
+    { korean: "저는 빵을 좋아합니다.", vietnamese: "Tôi thích bánh mì." },
+    { korean: "가방이 큽니다.", vietnamese: "Cái túi to." },
+  ],
 }

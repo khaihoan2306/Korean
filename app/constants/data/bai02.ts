@@ -63,5 +63,10 @@ export const bai02 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "하교에 도서관이 있습니다.", vietnamese: "Trong trường có thư viện." },
+    { korean: "강의실에 칠판이 있습니다.", vietnamese: "Trong phòng học có bảng." },
+    { korean: "학교에 가게가 없습니다.", vietnamese: "Trong trường học có cửa tiệm." },
+    { korean: "가의실에 컴퓨터가 없습니다.", vietnamese: "Trong phòng học không có máy vi tính." },
+  ],
 }

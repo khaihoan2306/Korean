@@ -82,5 +82,13 @@ export const bai06 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "어제 테니스를 쳤습니다.", vietnamese: "Hôm qua tôi đã tập thể thao." },
+    { korean: "아침에 일찍 산책을 했습니다.", vietnamese: "Tôi đã đi dạo vào buổi sáng sớm." },
+    { korean: "내일 우리 같이 외식합시다.", vietnamese: "Ngày mai chúng ta đi ăn ở ngoài nhé." },
+    {
+      korean: "다음 주 일요일에 쇼핑 갑시다.",
+      vietnamese: "Chủ nhật tuần sau chúng ta đi mua sắm nhé.",
+    },
+  ],
 }

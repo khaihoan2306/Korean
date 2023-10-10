@@ -34,5 +34,10 @@ export const bai08 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "소금은 짭니다. / 짜요.", vietnamese: "Muối thì mặn." },
+    { korean: "생선국은 맵지 않습니다. / 않아요.", vietnamese: "Phở xào thì không cay." },
+    { korean: "소고기 퍼는 조금 맵습니다. / 매워요.", vietnamese: "Phở bò thì hơi cay." },
+    { korean: "레몬은 십니다. / 셔요.", vietnamese: "Nước chanh thì chua." },
+  ],
 }

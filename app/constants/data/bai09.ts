@@ -58,5 +58,13 @@ export const bai09 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "오른쪽으로 가세요.", vietnamese: "Đi về hướng bên phải." },
+    { korean: "같이 극장에 갈래요?", vietnamese: "Chúng ta cùng đi xem phim nhé?" },
+    { korean: "한국에는 아파트가 아주 많습니다.", vietnamese: "Ở Hàn Quốc có nhiều chung cư." },
+    {
+      korean: "공항은 시내에서 멀어요.",
+      vietnamese: "Sân bay Nội Bài ở cách xa trung tâm thành phố.",
+    },
+  ],
 }

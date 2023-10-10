@@ -51,5 +51,13 @@ export const bai10 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "우리 가족은 모두 5명입니다.", vietnamese: "Gia đình chúng tôi có tất cả 5 người." },
+    { korean: "우리 부모님은 베트남에 사십니다.", vietnamese: "Bố mẹ của tôi sống ở Việt Nam." },
+    {
+      korean: "할아버지께서는 아침에 일찍 일어나십니다.",
+      vietnamese: "Bà nội của tôi thức dậy sớm vào buổi sáng.",
+    },
+    { korean: "저는 가족을 만나고 싶습니다.", vietnamese: "Tôi muốn gặp gia đình tôi." },
+  ],
 }

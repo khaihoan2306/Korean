@@ -7,3 +7,9 @@ const example = {
     { korean: "", vietnamese: "" },
   ],
 }
+const practice = [
+  { korean: "", vietnamese: "" },
+  { korean: "", vietnamese: "" },
+  { korean: "", vietnamese: "" },
+  { korean: "", vietnamese: "" },
+]

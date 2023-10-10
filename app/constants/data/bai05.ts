@@ -77,5 +77,10 @@ export const bai05 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "아침 6시에 일어납니다.", vietnamese: "Tôi thức dậy lúc 6 giờ." },
+    { korean: "8시 반에 회사에 출근합니다.", vietnamese: "Tôi đến công ty lúc 8 giờ." },
+    { korean: "10시에 회의실에서 회의를 합니다.", vietnamese: "Tôi họp lúc 10 giờ." },
+    { korean: "오후 7시에 저녁을 먹습니다.", vietnamese: "Tôi ăn tối lúc 7 giờ." },
+  ],
 }

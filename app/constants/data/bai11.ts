@@ -123,5 +123,10 @@ export const bai11 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "여름은 짧고 겨울은 길어요.", vietnamese: "Mùa hè thì ngắn và mùa đông thì dài." },
+    { korean: "바람이 불고 비가 내립니다.", vietnamese: "Gió thổi và trời mưa." },
+    { korean: "가을에 한국에 갈 거예요.", vietnamese: "Mùa thu tôi sẽ sang Hàn Quốc." },
+    { korean: "봄은 3월부터 5월까지입니다.", vietnamese: "Từ tháng 3 đến tháng 5 là mùa xuân." },
+  ],
 }

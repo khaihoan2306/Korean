@@ -40,5 +40,10 @@ export const bai07 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "이 옷이 쌉니다.", vietnamese: "Cái áo này rẻ." },
+    { korean: "이 사과가 큽니다.", vietnamese: "Quả táo này to." },
+    { korean: "저는 영화를 보고 싶어요.", vietnamese: "Tôi muốn xem phim." },
+    { korean: "연필은 쌉니다. 펜은 비쌉니다.", vietnamese: "Bút chì thì rẻ. Bút mực thì đắt." },
+  ],
 }

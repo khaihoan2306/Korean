@@ -46,5 +46,13 @@ export const bai15 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    {
+      korean: "한국에서 베트남까지 어떻게 가요?",
+      vietnamese: "Từ Hàn Quốc đến Việt Nam đi bằng gì?",
+    },
+    { korean: "한국까지 비행기로 가요.", vietnamese: "Tôi đến Hàn Quốc bằng máy bay." },
+    { korean: "시간이 얼마나 걸려요?", vietnamese: "Mất bao nhiêu thời gian?" },
+    { korean: "5시간쯤 걸려요.", vietnamese: "Mất khoảng 5 tiếng." },
+  ],
 }

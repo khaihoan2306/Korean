@@ -82,5 +82,13 @@ export const bai13 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "새이를 축하합니다.", vietnamese: "Chúc mừng sinh nhật." },
+    { korean: "백화점에 같이 갈까요?", vietnamese: "Chúng ta đi đến cửa hàng bách hoá nhé?" },
+    { korean: "친구들이 많이 와서 기뻤습니다.", vietnamese: "Vì các bạn đến nhiều nên rất vui." },
+    {
+      korean: "시계가 예뻐서 마음에 들었습니다.",
+      vietnamese: "Tôi thích chiếc đồng hồ vì nó đẹp.",
+    },
+  ],
 }

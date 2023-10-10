@@ -49,5 +49,16 @@ export const bai12 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "남동생에게 전화를 합니다.", vietnamese: "(Tôi) gọi điện thoại cho em trai." },
+    { korean: "부모님께 전화를 드립니다.", vietnamese: "(Tôi) định gọi điện thoại cho bố mẹ." },
+    {
+      korean: "일주일에 세 번 전화를 합니다.",
+      vietnamese: "Mỗi tuần (tôi) gọi điện thoại khoảng 3 lần.",
+    },
+    {
+      korean: "이 전화기는 예쁘지만 비쌉니다.",
+      vietnamese: "Điện thoại di động đắt nhưng thuận tiện.",
+    },
+  ],
 }

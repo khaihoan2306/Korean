@@ -56,5 +56,10 @@ export const bai14 = {
       ],
     },
   ],
-  practice: [],
+  practice: [
+    { korean: "취미가 무엇입니까?", vietnamese: "Sở thích của bạn là gì?" },
+    { korean: "제 취미는 책 읽기입니다.", vietnamese: "Sở thích của tôi là đọc sách." },
+    { korean: "수빈 씨는 등산하늣 것을 좋아합니다.", vietnamese: "Subin thích leo núi." },
+    { korean: "어떤 운동을 할 수 있습니까?", vietnamese: "Bạn có thể chơi được môn thể thao nào?" },
+  ],
 }
