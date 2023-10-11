@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
   },
   center: {
     alignItems: "center",

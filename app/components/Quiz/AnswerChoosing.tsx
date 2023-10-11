@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   questionText: {
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
     fontSize: 24,
     textAlign: "center",
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   optionText: {
     color: colors.palette.secondaryGreen800,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     fontSize: 18,
   },
   incorrect: {

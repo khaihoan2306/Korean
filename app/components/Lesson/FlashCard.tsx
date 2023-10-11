@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   korean: {
     fontSize: 24,
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
   },
   vietnamese: {
     fontSize: 20,

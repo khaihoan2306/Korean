@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     color: colors.palette.text1,
   },
   header: {
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 24,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     color: colors.palette.secondaryGreen100,
   },
   notification: {

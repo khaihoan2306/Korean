@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 100,
     backgroundColor: colors.palette.gray,
-    fontFamily: "Jost-Regular",
+    fontFamily: "NotoSerif_Condensed-Regular",
     fontSize: 16,
     color: colors.palette.dark400,
   },

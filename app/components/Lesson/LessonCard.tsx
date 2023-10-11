@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     color: colors.palette.text3,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
   },
   subTitle: {
     color: colors.palette.text2,

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     color: colors.palette.green900,
   },
 })

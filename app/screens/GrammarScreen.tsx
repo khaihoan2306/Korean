@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
     color: colors.palette.green800,
   },
   titleContainer: {
@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   content: {
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     textAlign: "justify",
   },
   example: {
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     color: colors.palette.green1000,
     flex: 1,
     marginHorizontal: 10,

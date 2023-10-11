@@ -72,6 +72,78 @@
     {
       "path": "assets/fonts/Jost-ThinItalic.ttf",
       "sha1": "d359d267189c12a0fb24baf1abb4d6c6f25580d6"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Black.ttf",
+      "sha1": "2c431eda8eac2a6e22ed7e019c66c4a9229eacf0"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-BlackItalic.ttf",
+      "sha1": "f560290128914f510702b008a71a0b0f1fbf7c63"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Bold.ttf",
+      "sha1": "9ca09dc858bd350405f62e948065cde43d5a301b"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-BoldItalic.ttf",
+      "sha1": "c14616cf1f840f5220ce90aaa18a31794508aac9"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-ExtraBold.ttf",
+      "sha1": "15865aab98505c9fef0333f18d92ec4c940c727f"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "784fcc4b6980f484e21e1d7643eca16d3710df04"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-ExtraLight.ttf",
+      "sha1": "5f5af63d23125e958752586af8485ccefd25d369"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-ExtraLightItalic.ttf",
+      "sha1": "27d076cc99a1870f9c9f4be11d4adb9be8ab2e38"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Italic.ttf",
+      "sha1": "60d612950cc3a0deab3858de7756940b5e1c5e60"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Light.ttf",
+      "sha1": "48602350662605a207530af9b31c62b6bd045e7b"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-LightItalic.ttf",
+      "sha1": "098a386effb3f1b9c26f24b1141b33a4ab954feb"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Medium.ttf",
+      "sha1": "62d0f5cf1fae121c3961efd4f9d496beb1e79fbf"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-MediumItalic.ttf",
+      "sha1": "8b828df262ee74abb52ea211353bf2536d80adf7"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Regular.ttf",
+      "sha1": "fcf43242e9d4375a75ca10fe31d88ebec1dd391d"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-SemiBold.ttf",
+      "sha1": "fa1cff11556ea17b8704475099da86fb4600ac43"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-SemiBoldItalic.ttf",
+      "sha1": "da18c5c12cec23b984ec0e1843a15e68fc5a351d"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-Thin.ttf",
+      "sha1": "673501aa4b6841c41fac63a402b96dbe8d87ed93"
+    },
+    {
+      "path": "assets/fonts/NotoSerif_Condensed-ThinItalic.ttf",
+      "sha1": "38224cca603ee776af8475471e18cb7a37bb73e2"
     }
   ]
 }

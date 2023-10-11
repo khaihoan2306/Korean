@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   textInput: {
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
     fontSize: 24,
     borderRadius: 10,
     color: colors.palette.green900,
@@ -79,13 +79,13 @@ const styles = StyleSheet.create({
     minHeight: "30%",
   },
   question: {
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
     fontSize: 28,
     color: colors.palette.green900,
   },
 
   answer: {
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
     fontSize: 28,
     color: colors.palette.white,
     backgroundColor: colors.palette.green800,

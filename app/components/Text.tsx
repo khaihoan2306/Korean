@@ -16,7 +16,7 @@ export const Text = (props: IText) => {
 const styles = StyleSheet.create({
   text: {
     color: colors.text,
-    fontFamily: "Jost-Medium",
+    fontFamily: "NotoSerif_Condensed-Medium",
     fontSize: 16,
   },
 })

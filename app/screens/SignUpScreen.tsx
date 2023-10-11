@@ -17,10 +17,9 @@ export const SignUpScreen = () => {
   } = useStores()
 
   const onSignUp = async () => {
-   const res = await signUp(email, password)
-   if (res === "success") {
-    
-   }
+    const res = await signUp(email, password)
+    if (res === "success") {
+    }
   }
 
   const onLogin = () => {
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: "Jost-SemiBold",
+    fontFamily: "NotoSerif_Condensed-SemiBold",
   },
   center: {
     alignItems: "center",

@@ -71,6 +71,24 @@
 		<string>Jost-SemiBoldItalic.ttf</string>
 		<string>Jost-Thin.ttf</string>
 		<string>Jost-ThinItalic.ttf</string>
+		<string>NotoSerif_Condensed-Black.ttf</string>
+		<string>NotoSerif_Condensed-BlackItalic.ttf</string>
+		<string>NotoSerif_Condensed-Bold.ttf</string>
+		<string>NotoSerif_Condensed-BoldItalic.ttf</string>
+		<string>NotoSerif_Condensed-ExtraBold.ttf</string>
+		<string>NotoSerif_Condensed-ExtraBoldItalic.ttf</string>
+		<string>NotoSerif_Condensed-ExtraLight.ttf</string>
+		<string>NotoSerif_Condensed-ExtraLightItalic.ttf</string>
+		<string>NotoSerif_Condensed-Italic.ttf</string>
+		<string>NotoSerif_Condensed-Light.ttf</string>
+		<string>NotoSerif_Condensed-LightItalic.ttf</string>
+		<string>NotoSerif_Condensed-Medium.ttf</string>
+		<string>NotoSerif_Condensed-MediumItalic.ttf</string>
+		<string>NotoSerif_Condensed-Regular.ttf</string>
+		<string>NotoSerif_Condensed-SemiBold.ttf</string>
+		<string>NotoSerif_Condensed-SemiBoldItalic.ttf</string>
+		<string>NotoSerif_Condensed-Thin.ttf</string>
+		<string>NotoSerif_Condensed-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 26,
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
   },
 })

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   correctText: {
     fontSize: 30,
     color: colors.palette.green700,
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
   },
   image: {
     width: "90%",
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
   incorrectText: {
     fontSize: 30,
     color: "red",
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
   },
   text: {
-    fontFamily: "Jost-Bold",
+    fontFamily: "NotoSerif_Condensed-Bold",
     fontSize: 24,
   },
 })
