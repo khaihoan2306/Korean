@@ -1,6 +1,6 @@
-import { View, StyleSheet, FlatList } from "react-native"
+import { View, StyleSheet, FlatList, Image } from "react-native"
 import React from "react"
-import { Header, Screen, Spacer, Text } from "app/components"
+import { Header, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
 import { useStores } from "app/models"
 import { useSafeAreaInsetsStyle } from "app/utils/useSafeAreaInsetsStyle"
@@ -15,7 +15,7 @@ export const GrammarScreen = () => {
   const containerInsets = useSafeAreaInsetsStyle(["top", "bottom"])
 
   const Grammar = (props: any) => {
-    const { kTitle, vTitle, content, example, index } = props
+    const { kTitle, vTitle, content, example, image } = props
 
     return (
       <>
@@ -29,7 +29,9 @@ export const GrammarScreen = () => {
 
         <Text style={styles.content}>{content}</Text>
 
-        <Spacer height={20} />
+        {image && <Image style={styles.image} source={{ uri: image }} />}
+
+        <Spacer height={10} />
         {example?.length > 0 && (
           <View style={styles.exampleContainer}>
             <FlatList
@@ -46,7 +48,7 @@ export const GrammarScreen = () => {
             />
           </View>
         )}
-        <Spacer height={20} />
+        <Spacer height={10} />
       </>
     )
   }
@@ -77,6 +79,7 @@ export const GrammarScreen = () => {
                 vTitle={item.vTitle}
                 content={item.content}
                 example={item.example}
+                image={item.image}
               />
             )
           }}
@@ -120,5 +123,10 @@ const styles = StyleSheet.create({
   },
   bannerAd: {
     alignItems: "center",
+  },
+  image: {
+    width: "100%",
+    height: 200,
+    resizeMode: "contain",
   },
 })
