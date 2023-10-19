@@ -16,7 +16,7 @@ export const HomeScreen = () => {
   const [selectedList, setSelectedList] = useState([])
   const navigation = useNavigation<any>()
 
-  const buttonArray = [0, 1, 2]
+  const buttonArray = [0, 1, 2, 3]
 
   useEffect(() => {
     const tmpList = lessonList.filter((e, index) => Math.floor(index / 5) == subject)
@@ -26,12 +26,15 @@ export const HomeScreen = () => {
   const onLessonDetail = ({ title, lessonNumber }) => {
     navigation.navigate("LessonDetail", { title, lessonNumber })
   }
+  const onTopikTest = ({ topikNumber }) => {
+    navigation.navigate("TestIntroduction", { topikNumber })
+  }
 
   const onSendData = () => {
     firestore()
-      .collection("lessons")
-      .doc("bai-05")
-      .update(bai.bai05)
+      .collection("topik")
+      .doc("topik-35")
+      .update(bai.topik35)
       .then(() => {
         console.log("User added!")
       })
@@ -48,6 +51,9 @@ export const HomeScreen = () => {
         break
       case 2:
         title = "Bài 11 - 15"
+        break
+      case 3:
+        title = "Luyện thi TOPIK I"
         break
       default:
         title = "Bài 1 - 5"
@@ -120,9 +126,14 @@ export const HomeScreen = () => {
                 title={item.vietnameseTitle}
                 subTitle={item.koreanTitle}
                 image={item.image}
-                lessonNumber={`Bài ${item.lessonNumber}`}
+                lessonNumber={item.lessonNumber}
                 onPress={() =>
-                  onLessonDetail({ title: item.vietnameseTitle, lessonNumber: item.lessonNumber })
+                  subject === 3
+                    ? onTopikTest({ topikNumber: item.topikNumber })
+                    : onLessonDetail({
+                        title: item.vietnameseTitle,
+                        lessonNumber: item.lessonNumber,
+                      })
                 }
               />
               <Spacer height={20} />

@@ -47,6 +47,8 @@ export type AppStackParamList = {
   Grammar: undefined
   VocabularyReview: undefined
   GrammarReview: undefined
+  TestIntroduction: undefined
+  TopikTest: undefined
 }
 
 /**
@@ -99,6 +101,8 @@ const AppStack = observer(function AppStack() {
       <Stack.Screen name="Grammar" component={Screens.GrammarScreen} />
       <Stack.Screen name="VocabularyReview" component={Screens.VocabularyReviewScreen} />
       <Stack.Screen name="GrammarReview" component={Screens.GrammarReviewScreen} />
+      <Stack.Screen name="TestIntroduction" component={Screens.TestIntroductionScreen} />
+      <Stack.Screen name="TopikTest" component={Screens.TopikTestScreen} />
     </Stack.Navigator>
   )
 })

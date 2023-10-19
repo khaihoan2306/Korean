@@ -6,10 +6,12 @@ import App from "./app/app.tsx"
 import React from "react"
 import { AppRegistry } from "react-native"
 import RNBootSplash from "react-native-bootsplash"
+import TrackPlayer from 'react-native-track-player'
 
-function IgniteApp() {
-  return <App hideSplashScreen={RNBootSplash.hide} />
+function IgniteApp () {
+  return <App hideSplashScreen={ RNBootSplash.hide } />
 }
 
-AppRegistry.registerComponent("Korean", () => IgniteApp)
+AppRegistry.registerComponent( "Korean", () => IgniteApp )
+TrackPlayer.registerPlaybackService( () => require( './service' ) )
 export default App

@@ -18,12 +18,16 @@ export const LessonCard = (props: ILessonCard) => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={{ uri: image }} style={styles.image} />
+      {image && <Image source={{ uri: image }} style={styles.image} />}
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Spacer height={5} />
-        <Text style={styles.subTitle}>{subTitle}</Text>
-        <Text style={styles.lessonNumber}>{lessonNumber}</Text>
+        {lessonNumber && (
+          <>
+            <Spacer height={5} />
+            <Text style={styles.subTitle}>{subTitle}</Text>
+            <Text style={styles.lessonNumber}>{`Bài ${lessonNumber}`}</Text>
+          </>
+        )}
       </View>
     </TouchableOpacity>
   )
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     paddingHorizontal: 20,
-    paddingVertical: 4,
+    paddingVertical: 10,
     flex: 1,
   },
   title: {
