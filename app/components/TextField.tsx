@@ -1,6 +1,7 @@
 import { View, TextInput, TextInputProps, StyleSheet } from "react-native"
 import React from "react"
 import { colors } from "app/theme"
+import { Font } from "app/constants"
 
 interface ITextField extends TextInputProps {
   style?: any
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 100,
     backgroundColor: colors.palette.gray,
-    fontFamily: "NotoSerif_Condensed-Regular",
+    fontFamily: Font.REGULAR,
     fontSize: 16,
     color: colors.palette.dark400,
   },

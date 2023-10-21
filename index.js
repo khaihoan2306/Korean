@@ -13,5 +13,5 @@ function IgniteApp () {
 }
 
 AppRegistry.registerComponent( "Korean", () => IgniteApp )
-TrackPlayer.registerPlaybackService( () => require( './service' ) )
+TrackPlayer.registerPlaybackService(() => require( './service' ))
 export default App

@@ -4,6 +4,7 @@ import { Text } from "../Text"
 import { colors } from "app/theme"
 import { Spacer } from "../Spacer"
 import Image from "react-native-fast-image"
+import { Font } from "app/constants"
 
 interface ILessonCard {
   title?: string
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     color: colors.palette.text3,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
   },
   subTitle: {
     color: colors.palette.text2,

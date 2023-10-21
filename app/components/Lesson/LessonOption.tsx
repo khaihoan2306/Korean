@@ -3,6 +3,7 @@ import React from "react"
 import { Text } from "../Text"
 import { Spacer } from "../Spacer"
 import { colors } from "app/theme"
+import { Font } from "app/constants"
 
 interface ILessonOption {
   title?: string
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     color: colors.palette.green900,
   },
 })

@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/Ionicons"
 import { colors } from "app/theme"
 import { Text } from "./Text"
 import { useNavigation } from "@react-navigation/native"
+import { Font } from "app/constants"
 
 interface IHeader {
   onPress?(): void
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 26,
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
   },
 })

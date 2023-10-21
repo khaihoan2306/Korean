@@ -2,7 +2,7 @@ import { View, StyleSheet, TouchableOpacity, Image } from "react-native"
 import React from "react"
 import { Text } from "../Text"
 import { colors } from "app/theme"
-import { ScreenDimension } from "app/constants"
+import { Font, ScreenDimension } from "app/constants"
 import { Spacer } from "../Spacer"
 
 interface IFlashCard {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   korean: {
     fontSize: 24,
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
   },
   vietnamese: {
     fontSize: 20,

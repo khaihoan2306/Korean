@@ -89,7 +89,7 @@ function isNonScrolling(preset?: ScreenProps["preset"]) {
   return !preset || preset === "fixed"
 }
 
-function useAutoPreset(props: AutoScreenProps) {
+export function useAutoPreset(props: AutoScreenProps) {
   const { preset, scrollEnabledToggleThreshold } = props
   const { percent = 0.92, point = 0 } = scrollEnabledToggleThreshold || {}
 

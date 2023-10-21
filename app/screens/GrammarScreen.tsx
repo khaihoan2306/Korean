@@ -5,6 +5,7 @@ import { colors } from "app/theme"
 import { useStores } from "app/models"
 import { useSafeAreaInsetsStyle } from "app/utils/useSafeAreaInsetsStyle"
 import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads"
+import { Font } from "app/constants"
 
 const adUnitId = __DEV__ ? TestIds.BANNER : "ca-app-pub-4650295610990607/8879295705"
 
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
     color: colors.palette.green800,
   },
   titleContainer: {
@@ -106,11 +107,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   content: {
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     textAlign: "justify",
   },
   example: {
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     color: colors.palette.green1000,
     flex: 1,
     marginHorizontal: 10,

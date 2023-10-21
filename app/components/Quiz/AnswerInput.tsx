@@ -7,6 +7,7 @@ import { Spacer } from "../Spacer"
 import { Button } from "../Button"
 import { useStores } from "app/models"
 import { AdEventType, InterstitialAd, TestIds } from "react-native-google-mobile-ads"
+import { Font } from "app/constants"
 
 const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : "ca-app-pub-4650295610990607/4937602147"
 
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   textInput: {
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     fontSize: 24,
     borderRadius: 10,
     color: colors.palette.green900,
@@ -79,13 +80,13 @@ const styles = StyleSheet.create({
     minHeight: "30%",
   },
   question: {
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
     fontSize: 28,
     color: colors.palette.green900,
   },
 
   answer: {
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
     fontSize: 28,
     color: colors.palette.white,
     backgroundColor: colors.palette.green800,

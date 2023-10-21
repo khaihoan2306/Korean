@@ -40,7 +40,7 @@ const palette = {
   overlay50: "rgba(25, 16, 21, 0.5)",
   text1: "#152E35",
   text2: "#788D92",
-  text3: '#0E343D',
+  text3: "#0E343D",
 
   white: "#FFFFFF",
   black: "#000000",
@@ -50,9 +50,9 @@ const palette = {
 } as const
 
 export const colors = {
-  text: palette.dark500,
+  text: palette.black,
   background: palette.white,
   button: palette.secondaryGreen500,
   border: palette.grayEBEDEF,
-  palette
+  palette,
 }

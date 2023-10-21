@@ -1,7 +1,7 @@
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native"
 import React, { useState } from "react"
 import { Text } from "../Text"
-import { ScreenDimension } from "app/constants"
+import { Font, ScreenDimension } from "app/constants"
 import { Spacer } from "../Spacer"
 import { colors } from "app/theme"
 
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   questionText: {
-    fontFamily: "NotoSerif_Condensed-Bold",
+    fontFamily: Font.BOLD,
     fontSize: 24,
     textAlign: "center",
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   optionText: {
     color: colors.palette.secondaryGreen800,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     fontSize: 18,
   },
   incorrect: {

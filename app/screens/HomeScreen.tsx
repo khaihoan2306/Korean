@@ -4,7 +4,7 @@ import { Button, LessonCard, Screen, Spacer, Text } from "app/components"
 import { colors } from "app/theme"
 import Icon from "react-native-vector-icons/Ionicons"
 import { useNavigation } from "@react-navigation/native"
-import { lessonList } from "app/constants"
+import { Font, lessonList } from "app/constants"
 import firestore from "@react-native-firebase/firestore"
 import { BannerAd, BannerAdSize, TestIds } from "react-native-google-mobile-ads"
 import * as bai from "app/constants/data"
@@ -16,11 +16,27 @@ export const HomeScreen = () => {
   const [selectedList, setSelectedList] = useState([])
   const navigation = useNavigation<any>()
 
-  const buttonArray = [0, 1, 2, 3]
+  const buttonArray = [0, 1, 2]
 
   useEffect(() => {
-    const tmpList = lessonList.filter((e, index) => Math.floor(index / 5) == subject)
-    setSelectedList(tmpList)
+    const soCap1List = lessonList.filter((e, index) => index < 15)
+    const socap2List = []
+    const topikList = lessonList.filter((e, index) => index === 15)
+    let selected: any
+    switch (subject) {
+      case 0:
+        selected = soCap1List
+        break
+      case 1:
+        selected = socap2List
+        break
+      case 2:
+        selected = topikList
+        break
+      default:
+        selected = soCap1List
+    }
+    setSelectedList(selected)
   }, [subject])
 
   const onLessonDetail = ({ title, lessonNumber }) => {
@@ -44,19 +60,16 @@ export const HomeScreen = () => {
     let title: string
     switch (key) {
       case 0:
-        title = "Bài 1 - 5"
+        title = "Sơ cấp 1"
         break
       case 1:
-        title = "Bài 6 - 10"
+        title = "Sơ cấp 2"
         break
       case 2:
-        title = "Bài 11 - 15"
-        break
-      case 3:
         title = "Luyện thi TOPIK I"
         break
       default:
-        title = "Bài 1 - 5"
+        title = "Sơ cấp 1"
         break
     }
     const onPress = () => {
@@ -140,6 +153,7 @@ export const HomeScreen = () => {
             </>
           )}
           ListFooterComponent={<Spacer height={600} />}
+          ListEmptyComponent={<Text>Dữ liệu chưa được cập nhật</Text>}
         />
       </View>
     </Screen>
@@ -155,7 +169,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     color: colors.palette.text1,
   },
   header: {
@@ -167,7 +181,7 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 24,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
     color: colors.palette.secondaryGreen100,
   },
   notification: {

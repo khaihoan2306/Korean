@@ -1,31 +1,39 @@
-import { View, StyleSheet, Image } from "react-native"
+import { View, Image, StyleSheet } from "react-native"
 import React from "react"
-import { Text } from "../Text"
 import Modal from "react-native-modal"
-import { Button } from "../Button"
 import { Spacer } from "../Spacer"
-import { Font, ScreenDimension } from "app/constants"
+import { Text } from "../Text"
+import { Button } from "../Button"
 import { colors } from "app/theme"
+import { Font, ScreenDimension } from "app/constants"
+import { useStores } from "app/models"
 
-export const CorrectModal = (props: any) => {
-  const { isVisible, onPress, data, correct } = props
+export const TopikResultModal = (props: any) => {
+  const { isVisible, onPress } = props
+  const {
+    topikTestStore: { scores, level },
+  } = useStores()
+
   return (
     <Modal testID={"modal"} isVisible={isVisible}>
       <View style={styles.content}>
-        <Text style={correct === true ? styles.correctText : styles.incorrectText}>
-          {correct === true ? "Chính xác!" : "Chưa chính xác!"}
+        <Text style={level === 0 ? styles.incorrectText : styles.correctText}>
+          {level === 2
+            ? "Bạn đã đạt TOPIK I cấp 2!"
+            : level === 1
+            ? "Bạn đã đạt TOPIK I cấp 2!"
+            : "Bạn chưa đạt TOPIK I!"}
         </Text>
+
         <Spacer height={20} />
-        {data?.image && <Image source={{ uri: data?.image }} style={styles.image} />}
-        <Text style={styles.text}>{data?.korean}</Text>
+        <Text style={styles.text}>Điểm số của bạn là {scores}</Text>
         <Spacer height={20} />
-        <Text style={styles.text}>{data?.vietnamese}</Text>
-        <Spacer height={30} />
-        <Button onPress={onPress} title="Tiếp theo" />
+        <Button onPress={onPress} title="Đóng" />
       </View>
     </Modal>
   )
 }
+
 const styles = StyleSheet.create({
   content: {
     backgroundColor: "white",

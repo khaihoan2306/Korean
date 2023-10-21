@@ -4,6 +4,7 @@ import { Button, Screen, Spacer, Text, TextField } from "app/components"
 import { colors } from "app/theme"
 import { useNavigation } from "@react-navigation/native"
 import { useStores } from "app/models"
+import { Font } from "app/constants"
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState()
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: "NotoSerif_Condensed-SemiBold",
+    fontFamily: Font.SEMIBOLD,
   },
   center: {
     alignItems: "center",
