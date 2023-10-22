@@ -141,7 +141,7 @@ export const HomeScreen = () => {
                 image={item.image}
                 lessonNumber={item.lessonNumber}
                 onPress={() =>
-                  subject === 3
+                  subject === 2
                     ? onTopikTest({ topikNumber: item.topikNumber })
                     : onLessonDetail({
                         title: item.vietnameseTitle,

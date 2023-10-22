@@ -39,7 +39,7 @@ export const TestingSection = observer((props: any) => {
     const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
       setLoaded(true)
     })
-
+    interstitial.load()
     // Unsubscribe from events on unmount
     return unsubscribe
   }, [])
@@ -131,7 +131,7 @@ export const TestingSection = observer((props: any) => {
   const onNext = () => {
     index < sectionList.length - 1 && setIndex(index + 1)
     if (index === sectionList.length - 1) {
-      if (isLoaded) interstitial.load()
+      interstitial.show()
       checkAnswer()
       setIsVisible(true)
     }
