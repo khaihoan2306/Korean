@@ -12,6 +12,13 @@ import { TopikResultModal } from "../Modal/TopikResultModal"
 import { ScrollView } from "react-native-gesture-handler"
 import TrackPlayer from "react-native-track-player"
 import { useNavigation } from "@react-navigation/native"
+import { AdEventType, InterstitialAd, TestIds } from "react-native-google-mobile-ads"
+
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : "ca-app-pub-4650295610990607/7538437067"
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+  requestNonPersonalizedAdsOnly: true,
+})
 
 export const TestingSection = observer((props: any) => {
   const { setTitle } = props
@@ -25,8 +32,17 @@ export const TestingSection = observer((props: any) => {
   const [content, setContent] = useState()
   const [image, setImage] = useState()
   const [isVisible, setIsVisible] = useState(false)
+  const [isLoaded, setLoaded] = useState(false)
   const navigation = useNavigation<any>()
 
+  useEffect(() => {
+    const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+      setLoaded(true)
+    })
+
+    // Unsubscribe from events on unmount
+    return unsubscribe
+  }, [])
   useEffect(() => {
     const tmpExample = []
     const tmpQuestions = []
@@ -115,6 +131,7 @@ export const TestingSection = observer((props: any) => {
   const onNext = () => {
     index < sectionList.length - 1 && setIndex(index + 1)
     if (index === sectionList.length - 1) {
+      if (isLoaded) interstitial.load()
       checkAnswer()
       setIsVisible(true)
     }
