@@ -186,10 +186,26 @@ export const topik35 = {
       id: 15,
       point: 4,
       answers: [
-        { key: "1", image: "" },
-        { key: "2", image: "" },
-        { key: "3", image: "" },
-        { key: "4", image: "" },
+        {
+          key: "1",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F15-1.png?alt=media&token=0d9f6cb7-0dac-4c98-bcfa-10b84c1b1ae9&_gl=1*ctleap*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDMzNS4zNy4wLjA.",
+        },
+        {
+          key: "2",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F15-2.png?alt=media&token=0f98e9d7-9375-4042-8873-60c2dd3acb66&_gl=1*1lb4kqs*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDM2Ny41LjAuMA..",
+        },
+        {
+          key: "3",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F15-3.png?alt=media&token=11ace0a8-385e-4757-b56e-69c7c9718530&_gl=1*193twn0*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDM3OC42MC4wLjA.",
+        },
+        {
+          key: "4",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F15-4.png?alt=media&token=81f06104-da63-40c7-b551-c6f874c623f1&_gl=1*1tpl098*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDM5MS40Ny4wLjA.",
+        },
       ],
       correctAnswer: "1",
     },
@@ -197,10 +213,26 @@ export const topik35 = {
       id: 16,
       point: 4,
       answers: [
-        { key: "1", image: "" },
-        { key: "2", image: "" },
-        { key: "3", image: "" },
-        { key: "4", image: "" },
+        {
+          key: "1",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F16-1.png?alt=media&token=0adec13e-d738-4273-9d7e-dfe480c71300&_gl=1*e8kxjd*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQxMS4yNy4wLjA.",
+        },
+        {
+          key: "2",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F16-2.png?alt=media&token=bd5fadf9-03e4-4008-a1fb-9479b081bdd4&_gl=1*r3epdc*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQyOS45LjAuMA..",
+        },
+        {
+          key: "3",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F16-3.png?alt=media&token=b7446962-4a1a-4177-94ca-c37675164a49&_gl=1*1f0lk5e*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQ0Ni42MC4wLjA.",
+        },
+        {
+          key: "4",
+          image:
+            "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F16-4.png?alt=media&token=e42de0ed-b97d-43a8-aa70-fee97177fba6&_gl=1*tv3jyf*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQ2MC40Ni4wLjA.",
+        },
       ],
       correctAnswer: "3",
     },
@@ -376,6 +408,8 @@ export const topik35 = {
         { key: "4", value: "주말" },
       ],
       correctAnswer: "3",
+      explain:
+        "Dịch nghĩa: Tôi là Kim Min Soo. Người này là James.\n1: thời gian => sai\n2: nơi chốn => sai\n3: tên => đúng\n4: cuối tuần => sai",
     },
     {
       id: 32,
@@ -486,7 +520,8 @@ export const topik35 = {
       id: 40,
       point: 3,
       title: "(3점)",
-      image: "",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F40.png?alt=media&token=5d76e20c-ca09-42a3-980a-65715b8f355b&_gl=1*35syfd*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQ3Ni4zMC4wLjA.",
       answers: [
         { key: "1", value: "이 컴퓨터는 십만 원입니다." },
         { key: "2", value: "이 컴퓨터를 1년 동안 썼습니다." },
@@ -499,7 +534,8 @@ export const topik35 = {
       id: 41,
       point: 3,
       title: "(3점)",
-      image: "",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F41.png?alt=media&token=19c25b9a-2222-4804-b028-3604ceeeca85&_gl=1*12ftok3*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDQ5NC4xMi4wLjA.",
       answers: [
         { key: "1", value: "지현 씨의 동생이 왔습니다." },
         { key: "2", value: "커피숍은 회사 안에 있습니다." },
@@ -512,7 +548,8 @@ export const topik35 = {
       id: 42,
       point: 3,
       title: "(3점)",
-      image: "",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F42.png?alt=media&token=395e114a-76c2-4d6f-8e95-d36436994b55&_gl=1*1w0ip8s*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDUwOC42MC4wLjA.",
       answers: [
         { key: "1", value: "하늘공원에서 음악회를 합니다." },
         { key: "2", value: "토요일마다 음악회가 있습니다." },
@@ -1058,7 +1095,8 @@ export const topik35 = {
       fromQuestion: 63,
       toQuestion: 64,
       title: "※ [63~64] 다음을 읽고 물음에 답하십시오.",
-      image: "",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/korean-b640f.appspot.com/o/topik%2Ftopik-35%2F63-64.png?alt=media&token=c4662ccd-56a5-4b35-b1f3-1c74f311401e&_gl=1*1g3epm5*_ga*MTkwNjI0OTk1Mi4xNjk2NzY4OTU4*_ga_CW55HF8NVT*MTY5ODU4MjQxMy43LjEuMTY5ODU4NDUyNy40MS4wLjA.",
     },
     {
       fromQuestion: 65,

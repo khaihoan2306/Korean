@@ -33,6 +33,7 @@ export const TestingSection = observer((props: any) => {
   const [image, setImage] = useState()
   const [isVisible, setIsVisible] = useState(false)
   const [isLoaded, setLoaded] = useState(false)
+  const [isShowExplain, setIsShowExplain] = useState(false)
   const navigation = useNavigation<any>()
 
   useEffect(() => {
@@ -74,7 +75,7 @@ export const TestingSection = observer((props: any) => {
   }, [index])
   const radioButtons = useMemo(() => exampleAnswers, [exampleAnswers])
 
-  const renderQuestion = ({ title, answers, id, content, image }) => {
+  const renderQuestion = ({ title, answers, id, content, image, explain }) => {
     const tmp = []
     answers.map((e) => {
       tmp.push({
@@ -125,15 +126,22 @@ export const TestingSection = observer((props: any) => {
           />
         )}
         <Spacer height={10} />
+        {isShowExplain && explain && (
+          <View style={styles.explainContainer}>
+            <Text style={styles.explainText}>{explain}</Text>
+          </View>
+        )}
       </View>
     )
   }
   const onNext = () => {
     index < sectionList.length - 1 && setIndex(index + 1)
     if (index === sectionList.length - 1) {
-      interstitial.show()
-      checkAnswer()
-      setIsVisible(true)
+      if (!isShowExplain) {
+        interstitial.show()
+        checkAnswer()
+        setIsVisible(true)
+      }
     }
   }
   const onPrevious = () => {
@@ -142,6 +150,11 @@ export const TestingSection = observer((props: any) => {
   const onClose = () => {
     setIsVisible(false)
     navigation.navigate("Home")
+  }
+  const onViewSolution = () => {
+    setIsVisible(false)
+    setIsShowExplain(true)
+    setIndex(0)
   }
 
   return (
@@ -191,7 +204,7 @@ export const TestingSection = observer((props: any) => {
           onPress={onNext}
         />
       </View>
-      <TopikResultModal isVisible={isVisible} onPress={onClose} />
+      <TopikResultModal isVisible={isVisible} onPress={onClose} onViewSolution={onViewSolution} />
     </View>
   )
 })
@@ -233,5 +246,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 200,
     resizeMode: "contain",
+  },
+  explainContainer: {
+    backgroundColor: colors.palette.green600,
+    borderRadius: 10,
+    padding: 14,
+  },
+  explainText: {
+    color: colors.palette.white,
   },
 })

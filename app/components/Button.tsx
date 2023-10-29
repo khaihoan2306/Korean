@@ -6,13 +6,19 @@ import { colors } from "app/theme"
 interface IButton extends TouchableOpacityProps {
   title?: string
   textStyle?: TextStyle
+  type?: "fill" | "outlined"
 }
 
 export const Button = (props: IButton) => {
-  const { title, style, textStyle } = props
+  const { title, style, textStyle, type } = props
   return (
-    <TouchableOpacity {...props} style={[styles.container, style]}>
-      <Text style={[styles.text, textStyle]}>{title}</Text>
+    <TouchableOpacity
+      {...props}
+      style={[styles.container, type === "outlined" && styles.outlined, style]}
+    >
+      <Text style={[styles.text, type === "outlined" && styles.outlinedText, textStyle]}>
+        {title}
+      </Text>
     </TouchableOpacity>
   )
 }
@@ -29,5 +35,13 @@ const styles = StyleSheet.create({
   text: {
     color: colors.palette.white,
     fontSize: 18,
+  },
+  outlined: {
+    backgroundColor: colors.palette.white,
+    borderWidth: 2,
+    borderColor: colors.button,
+  },
+  outlinedText: {
+    color: colors.palette.green1000,
   },
 })

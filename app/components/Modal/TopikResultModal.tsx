@@ -9,7 +9,7 @@ import { Font, ScreenDimension } from "app/constants"
 import { useStores } from "app/models"
 
 export const TopikResultModal = (props: any) => {
-  const { isVisible, onPress } = props
+  const { isVisible, onClose, onViewSolution } = props
   const {
     topikTestStore: { scores, level },
   } = useStores()
@@ -28,7 +28,9 @@ export const TopikResultModal = (props: any) => {
         <Spacer height={20} />
         <Text style={styles.text}>Điểm số của bạn là {scores}</Text>
         <Spacer height={20} />
-        <Button onPress={onPress} title="Đóng" />
+        <Button onPress={onClose} title="Thoát" />
+        <Spacer height={10} />
+        <Button type="outlined" title="Xem đáp án" onPress={onViewSolution} />
       </View>
     </Modal>
   )
