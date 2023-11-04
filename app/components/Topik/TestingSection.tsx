@@ -75,7 +75,7 @@ export const TestingSection = observer((props: any) => {
   }, [index])
   const radioButtons = useMemo(() => exampleAnswers, [exampleAnswers])
 
-  const renderQuestion = ({ title, answers, id, content, image, explain }) => {
+  const renderQuestion = ({ title, answers, id, content, image, explain, correctAnswer }) => {
     const tmp = []
     answers.map((e) => {
       tmp.push({
@@ -83,11 +83,14 @@ export const TestingSection = observer((props: any) => {
         label: e.value,
         value: e.value,
         image: e.image,
-        labelStyle: { color: colors.text },
+        labelStyle: {
+          color: correctAnswer === e.key && isShowExplain ? colors.palette.green400 : colors.text,
+          fontFamily: correctAnswer === e.key && isShowExplain ? Font.EXTRA_BOLD : Font.MEDIUM,
+        },
       })
     })
     const onSelect = (e) => {
-      setAnswer(id, e.toString())
+      !isShowExplain && setAnswer(id, e.toString())
     }
 
     return (
@@ -125,12 +128,12 @@ export const TestingSection = observer((props: any) => {
             selectedId={answerList[id - 1].value}
           />
         )}
-        <Spacer height={10} />
+        {/* <Spacer height={10} />
         {isShowExplain && explain && (
           <View style={styles.explainContainer}>
             <Text style={styles.explainText}>{explain}</Text>
           </View>
-        )}
+        )} */}
       </View>
     )
   }

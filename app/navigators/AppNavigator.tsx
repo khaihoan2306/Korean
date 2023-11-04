@@ -12,8 +12,8 @@ import {
 } from "@react-navigation/native"
 import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack"
 import { observer } from "mobx-react-lite"
-import React, { useEffect, useState } from "react"
-import { useColorScheme } from "react-native"
+import React, { useEffect, useRef, useState } from "react"
+import { AppState, useColorScheme } from "react-native"
 import * as Screens from "app/screens"
 import Config from "../config"
 import { useStores } from "../models" // @demo remove-current-line
@@ -22,6 +22,7 @@ import { colors } from "app/theme"
 import { loadString, saveString } from "app/utils/storage"
 import * as Constant from "app/constants"
 import { TabBar } from "./TabNavigator"
+import TrackPlayer from "react-native-track-player"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -66,11 +67,8 @@ export type AppStackScreenProps<T extends keyof AppStackParamList> = NativeStack
 const Stack = createNativeStackNavigator<AppStackParamList>()
 
 const AppStack = observer(function AppStack() {
-  // @demo remove-block-start
-  const {
-    authenticationStore: { isAuthenticated },
-  } = useStores()
   const [isFirstTime, setIsFirstTime] = useState(undefined)
+  const appState = useRef(AppState.currentState)
   useEffect(() => {
     const checkIsFirstTime = async () => {
       const isFirstTime = await loadString(Constant.IS_FIRST_TIME)
@@ -82,6 +80,23 @@ const AppStack = observer(function AppStack() {
       }
     }
     checkIsFirstTime()
+  }, [])
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", (nextAppState) => {
+      if (appState.current.match(/inactive|background/) && nextAppState === "active") {
+        TrackPlayer.play()
+      } else {
+        if (appState.current === "active" && nextAppState.match(/inactive|background/)) {
+          TrackPlayer.pause()
+        }
+      }
+
+      appState.current = nextAppState
+    })
+
+    return () => {
+      subscription.remove()
+    }
   }, [])
   if (isFirstTime === undefined) return null
 
