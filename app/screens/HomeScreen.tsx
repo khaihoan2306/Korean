@@ -21,7 +21,7 @@ export const HomeScreen = () => {
   useEffect(() => {
     const soCap1List = lessonList.filter((e, index) => index < 15)
     const socap2List = []
-    const topikList = lessonList.filter((e, index) => index === 15)
+    const topikList = lessonList.filter((e, index) => index >= 15)
     let selected: any
     switch (subject) {
       case 0:
@@ -49,8 +49,8 @@ export const HomeScreen = () => {
   const onSendData = () => {
     firestore()
       .collection("topik")
-      .doc("topik-35")
-      .update(bai.topik35)
+      .doc("topik-41")
+      .update(bai.topik41)
       .then(() => {
         console.log("User added!")
       })

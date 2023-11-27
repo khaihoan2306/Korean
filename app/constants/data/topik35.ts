@@ -4,7 +4,6 @@ export const topik35 = {
       id: 1,
       point: 4,
       title: "(4점)",
-
       answers: [
         { key: "1", value: "네, 우산이에요." },
         { key: "2", value: "아니요, 우산을 써요." },
@@ -17,7 +16,6 @@ export const topik35 = {
       id: 2,
       point: 4,
       title: "(4점)",
-
       answers: [
         { key: "1", value: "네, 회사에 없어요." },
         { key: "2", value: "아니요, 회사에 안 가요." },
@@ -30,7 +28,6 @@ export const topik35 = {
       id: 3,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "친구와 마셨어요." },
         { key: "2", value: "한 잔 마셨어요." },
@@ -43,7 +40,6 @@ export const topik35 = {
       id: 4,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "어제 샀어요." },
         { key: "2", value: "아주 예뻐요." },
@@ -56,7 +52,6 @@ export const topik35 = {
       id: 5,
       point: 4,
       title: "(4점)",
-
       answers: [
         { key: "1", value: "잘 가요." },
         { key: "2", value: "고마워요." },
@@ -69,7 +64,6 @@ export const topik35 = {
       id: 6,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "네, 부탁합니다." },
         { key: "2", value: "네, 들어오세요." },
@@ -82,7 +76,6 @@ export const topik35 = {
       id: 7,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "꽃집" },
         { key: "2", value: "약국" },
@@ -95,7 +88,6 @@ export const topik35 = {
       id: 8,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "공항" },
         { key: "2", value: "시장" },
@@ -108,7 +100,6 @@ export const topik35 = {
       id: 9,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "미용실" },
         { key: "2", value: "사진관" },
@@ -121,7 +112,6 @@ export const topik35 = {
       id: 10,
       point: 4,
       title: "(4점)",
-
       answers: [
         { key: "1", value: "서점" },
         { key: "2", value: "식당" },
@@ -134,7 +124,6 @@ export const topik35 = {
       id: 11,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "값" },
         { key: "2", value: "맛" },
@@ -147,7 +136,6 @@ export const topik35 = {
       id: 12,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "생일" },
         { key: "2", value: "날짜" },
@@ -160,7 +148,6 @@ export const topik35 = {
       id: 13,
       point: 4,
       title: "(4점)",
-
       answers: [
         { key: "1", value: "선물" },
         { key: "2", value: "계절" },
@@ -173,7 +160,6 @@ export const topik35 = {
       id: 14,
       point: 3,
       title: "(3점)",
-
       answers: [
         { key: "1", value: "여행" },
         { key: "2", value: "요일" },
@@ -442,7 +428,7 @@ export const topik35 = {
       id: 34,
       point: 2,
       title: "(2점)",
-      content: "몇 시(      )옵니까",
+      content: "몇 시(      )옵니까?",
       answers: [
         { key: "1", value: "가" },
         { key: "2", value: "는" },
